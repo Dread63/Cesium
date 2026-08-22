@@ -10,6 +10,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.0] - 2026-08-23
+### Fixed
+- [#963: Nested preprocessor calls fails](https://github.com/ForNeVeR/Cesium/issues/963). Thanks to @kant2002!
+- [#993](https://github.com/ForNeVeR/Cesium/pull/993): Fix infinite loop on `Visit` of `IdentifierDesignator`. Thanks to @pkazakov-dev!
+- [#996: Cesium-compiled assemblies break .NET IL trimmer](https://github.com/ForNeVeR/Cesium/issues/996). Thanks to @kant2002!
+- [#997: Avalonia XAML previewer cannot load Cesium libraries using Reflection](https://github.com/ForNeVeR/Cesium/issues/997). Thanks to @kant2002!
+
+### Changed
+- [#295: Escape sequence processing: improve error reporting](https://github.com/ForNeVeR/Cesium/issues/295). Thanks to @comachrome!
+- Update the used dependencies.
+
+### Added
+- [#978: Implement compiler warnings](https://github.com/ForNeVeR/Cesium/pull/978). Thanks to @evgTSV!
+- [#991](https://github.com/ForNeVeR/Cesium/pull/991): Produce warning about missing parameters for macro invocation. Thanks to @kant2002!
+- [#999](https://github.com/ForNeVeR/Cesium/issues/999): Support C23 `bool` keyword as alias of `_Bool`. Thanks to @Ashish-Rawal-047!
+
 ## [0.4.1] - 2026-03-29
 ### Fixed
 - [#975: Struct layout should be sequential](https://github.com/ForNeVeR/Cesium/issues/975).
@@ -136,4 +152,5 @@ Thanks to our benefactors (in the alphabetical order):
 [0.3.0]: https://github.com/ForNeVeR/Cesium/compare/v0.2.0...v0.3.0
 [0.4.0]: https://github.com/ForNeVeR/Cesium/compare/v0.3.0...v0.4.0
 [0.4.1]: https://github.com/ForNeVeR/Cesium/compare/v0.4.0...v0.4.1
-[Unreleased]: https://github.com/ForNeVeR/Cesium/compare/v0.4.1...HEAD
+[0.5.0]: https://github.com/ForNeVeR/Cesium/compare/v0.4.1...v0.5.0
+[Unreleased]: https://github.com/ForNeVeR/Cesium/compare/v0.5.0...HEAD
