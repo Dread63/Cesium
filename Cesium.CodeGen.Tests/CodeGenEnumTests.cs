@@ -17,6 +17,17 @@ public class CodeGenEnumTests : CodeGenTestBase
         return VerifyMethods(moduleType);
     }
 
+    [MustUseReturnValue]
+    private static Task DoTypeTest(string source)
+    {
+        var assembly = GenerateAssembly(default, source);
+        return VerifyTypes(assembly);
+    }
+
+    [Fact]
+    public Task EnumTypeTest() => DoTypeTest(@"
+typedef enum Side { Side_L, Side_R } Side;");
+
     [Fact]
     public Task EnumDeclarationTest() => DoTest(@"
 enum Colour { Red, Green, Blue };
