@@ -17,6 +17,7 @@ public class CodeGenEnumTests : CodeGenTestBase
         return VerifyMethods(moduleType);
     }
 
+    // Currently failing tests using DoTypeTest is marked as "succeeded" so its obvious when proper implementation works in the future
     [MustUseReturnValue]
     private static Task DoTypeTest(string source)
     {
