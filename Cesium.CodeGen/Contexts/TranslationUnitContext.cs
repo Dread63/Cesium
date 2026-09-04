@@ -127,7 +127,7 @@ public class TranslationUnitContext
     private readonly Dictionary<string, IType> _types = new();
     private readonly Dictionary<string, IType> _tags = new();
 
-    internal void GenerateType(string name, StructType type)
+    internal void GenerateType(string name, IGeneratedType type)
     {
         AssemblyContext.GenerateType(this, name, type);
         AssemblyContext.GenerateTypeMembers(this, name, type);

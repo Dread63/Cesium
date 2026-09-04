@@ -381,51 +381,57 @@ public class AssemblyContext : IDisposable
         return name;
     }
 
-    internal void GenerateType(TranslationUnitContext context, string name, StructType type)
+    internal void GenerateType(TranslationUnitContext context, string name, IGeneratedType type)
     {
         if (!_generatedTypes.ContainsKey(type))
         {
             var typeReference = type.StartEmit(name, context);
             _generatedTypes.Add(type, typeReference);
-
-            if (typeReference.Fields.Count == 0)
+            if (type is StructType structType)
             {
-                foreach (var member in type.Members)
+                if (typeReference.Fields.Count == 0)
                 {
-                    if (member.Type is StructType structType)
+                    foreach (var member in structType.Members)
                     {
-                        var typeName = this.GenerateTypeName(structType);
-                        this.GenerateType(context, typeName, structType);
-                    }
+                        if (member.Type is StructType nestedStruct)
+                        {
+                            var typeName = this.GenerateTypeName(nestedStruct);
+                            this.GenerateType(context, typeName, nestedStruct);
+                        }
 
-                    if (member.Type is PointerType { Base: StructType structTypePtr })
-                    {
-                        var typeName = this.GenerateTypeName(structTypePtr);
-                        this.GenerateType(context, typeName, structTypePtr);
+                        if (member.Type is PointerType { Base: StructType structTypePtr })
+                        {
+                            var typeName = this.GenerateTypeName(structTypePtr);
+                            this.GenerateType(context, typeName, structTypePtr);
+                        }
                     }
                 }
             }
         }
     }
 
-    internal void GenerateTypeMembers(TranslationUnitContext context, string name, StructType type)
+    internal void GenerateTypeMembers(TranslationUnitContext context, string name, IGeneratedType type)
     {
         if (!_generatedFieldsTypes.ContainsKey(type))
         {
             var typeReference = (TypeDefinition)_generatedTypes[type]!;
             _generatedFieldsTypes.Add(type, typeReference);
-            foreach (var member in type.Members)
+            // Structs can have nested structs, enum's can't
+            if (type is StructType structType)
             {
-                if (member.Type is StructType structType)
+                foreach (var member in structType.Members)
                 {
-                    var typeName = this.GenerateTypeName(structType);
-                    this.GenerateTypeMembers(context, typeName, structType);
-                }
+                    if (member.Type is StructType nestedStruct)
+                    {
+                        var typeName = this.GenerateTypeName(nestedStruct);
+                        this.GenerateTypeMembers(context, typeName, nestedStruct);
+                    }
 
-                if (member.Type is PointerType { Base: StructType structTypePtr })
-                {
-                    var typeName = this.GenerateTypeName(structTypePtr);
-                    this.GenerateTypeMembers(context, typeName, structTypePtr);
+                    if (member.Type is PointerType { Base: StructType structTypePtr })
+                    {
+                        var typeName = this.GenerateTypeName(structTypePtr);
+                        this.GenerateTypeMembers(context, typeName, structTypePtr);
+                    }
                 }
             }
 
