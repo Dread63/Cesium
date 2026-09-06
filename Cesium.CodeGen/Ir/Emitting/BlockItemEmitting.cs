@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Cesium contributors <https://github.com/ForNeVeR/Cesium>
+// SPDX-FileCopyrightText: 2025-2026 Cesium contributors <https://github.com/ForNeVeR/Cesium>
 //
 // SPDX-License-Identifier: MIT
 
@@ -137,6 +137,9 @@ internal static class BlockItemEmitting
                     var (type, identifier, _) = typeDef;
                     if (type is StructType g)
                         scope.Context.GenerateType(identifier!, g);
+
+                    if (type is EnumType e)
+                        scope.Context.GenerateType(identifier!, e);
                 }
 
                 return;
@@ -148,6 +151,9 @@ internal static class BlockItemEmitting
                     var (type, identifier, _) = typeDef;
                     if (type is StructType g)
                         scope.Context.GenerateType(identifier!, g);
+
+                    if (type is EnumType e)
+                        scope.Context.GenerateType(identifier!, e);
                 }
 
                 return;
