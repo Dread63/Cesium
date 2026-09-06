@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Cesium contributors <https://github.com/ForNeVeR/Cesium>
+// SPDX-FileCopyrightText: 2025-2026 Cesium contributors <https://github.com/ForNeVeR/Cesium>
 //
 // SPDX-License-Identifier: MIT
 
@@ -219,6 +219,9 @@ public abstract class CodeGenTestBase : VerifyTestBase
                     }
 
                     result.AppendLine($"{Indent(indent + 1)}{field}");
+
+                    if (field.HasConstant)
+                        result.AppendLine($"{Indent(indent + 1)}Constant: {field.Constant}");
 
                     if (field.HasCustomAttributes)
                         PrintCustomAttributes(indent + 1, field.CustomAttributes);
