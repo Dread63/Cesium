@@ -1,0 +1,12 @@
+Module: Primary
+  Type: <Module>
+
+  Type: Colors
+  Fields:
+    System.Int32 Colors::value__
+    Colors Colors::Red
+    Constant: 0
+    Colors Colors::Green
+    Constant: 5
+    Colors Colors::Blue
+    Constant: 6
