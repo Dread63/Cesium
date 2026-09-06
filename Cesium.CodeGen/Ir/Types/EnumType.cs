@@ -1,9 +1,12 @@
-// SPDX-FileCopyrightText: 2025 Cesium contributors <https://github.com/ForNeVeR/Cesium>
+// SPDX-FileCopyrightText: 2025-2026 Cesium contributors <https://github.com/ForNeVeR/Cesium>
 //
 // SPDX-License-Identifier: MIT
 
 using Cesium.CodeGen.Contexts;
+using Cesium.CodeGen.Extensions;
 using Cesium.CodeGen.Ir.Declarations;
+using Cesium.CodeGen.Ir.Expressions.Constants;
+using Cesium.Core;
 using Mono.Cecil;
 
 namespace Cesium.CodeGen.Ir.Types;
@@ -54,7 +57,31 @@ internal sealed class EnumType : IGeneratedType, IEquatable<EnumType>, IEquatabl
 
     public void FinishEmit(TypeDefinition definition, string name, TranslationUnitContext context)
     {
+        var valueField = new FieldDefinition("value__",
+            FieldAttributes.Public | FieldAttributes.SpecialName | FieldAttributes.RTSpecialName, context.TypeSystem.Int32);
 
+        definition.Fields.Add(valueField);
+
+        var scope = context.GetInitializerScope();
+        foreach (var enumConstant in TranslationUnitEx.FindEnumConstants(this, scope))
+        {
+            var constant = ConstantEvaluator.GetConstantValue(enumConstant.Value, scope);
+            if (constant is not IntegerConstant integerConstant ||
+                integerConstant.Value is < int.MinValue or > int.MaxValue)
+            {
+                throw new CompilationException(
+                    $"Enumerator {enumConstant.Identifier} has a value that does not fit in a 32-bit integer.");
+            }
+
+            var field = new FieldDefinition(
+                enumConstant.Identifier,
+                FieldAttributes.Public | FieldAttributes.Static | FieldAttributes.Literal,
+                definition)
+            {
+                Constant = (int)integerConstant.Value
+            };
+            definition.Fields.Add(field);
+        }
     }
 
     public bool Equals(EnumType? other)
