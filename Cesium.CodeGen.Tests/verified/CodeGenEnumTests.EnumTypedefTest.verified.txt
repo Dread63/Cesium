@@ -1,0 +1,10 @@
+Module: Primary
+  Type: <Module>
+
+  Type: Side
+  Fields:
+    System.Int32 Side::value__
+    Side Side::Side_L
+    Constant: 0
+    Side Side::Side_R
+    Constant: 1
