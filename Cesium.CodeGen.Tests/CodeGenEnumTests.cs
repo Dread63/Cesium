@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Cesium contributors <https://github.com/ForNeVeR/Cesium>
+// SPDX-FileCopyrightText: 2025-2026 Cesium contributors <https://github.com/ForNeVeR/Cesium>
 //
 // SPDX-License-Identifier: MIT
 
@@ -17,7 +17,6 @@ public class CodeGenEnumTests : CodeGenTestBase
         return VerifyMethods(moduleType);
     }
 
-    // Currently failing tests using DoTypeTest is marked as "succeeded" so its obvious when proper implementation works in the future
     [MustUseReturnValue]
     private static Task DoTypeTest(string source)
     {
@@ -26,8 +25,16 @@ public class CodeGenEnumTests : CodeGenTestBase
     }
 
     [Fact]
-    public Task EnumTypeTest() => DoTypeTest(@"
+    public Task EnumTypedefTest() => DoTypeTest(@"
 typedef enum Side { Side_L, Side_R } Side;");
+
+    [Fact]
+    public Task EnumInitializerTest() => DoTypeTest(@"
+enum Colors { Red, Green = 5, Blue };");
+
+    [Fact]
+    public Task EnumTypeTest() => DoTypeTest(@"
+enum Side { Side_L, Side_R };");
 
     [Fact]
     public Task EnumDeclarationTest() => DoTest(@"

@@ -9,3 +9,11 @@ Module: Primary
       IL_0002: call System.Void* Cesium.Runtime.RuntimeHelpers::AllocateGlobalField(System.UInt32)
       IL_0007: stsfld System.Byte* <Module>::a
       IL_000c: ret
+
+  Type: ValueSize
+  Fields:
+    System.Int32 ValueSize::value__
+    ValueSize ValueSize::Zero
+    Constant: 0
+    ValueSize ValueSize::One
+    Constant: 1
