@@ -39,6 +39,7 @@ public class CesiumMetadataImporter(TargetRuntimeDescriptor runtime, ModuleDefin
                 "System.Runtime.Versioning.TargetFrameworkAttribute" => runtime.GetSystemAssemblyReference(),
                 "System.Type" => runtime.GetSystemAssemblyReference(),
                 "System.ValueType" => runtime.GetSystemAssemblyReference(),
+                "System.Enum" => runtime.GetSystemAssemblyReference(),
                 _ => throw new AssertException(
                     $"I don't know what system assembly to use instead of System.Private.CoreLib " +
                     $"to import type {type.FullName}.")
