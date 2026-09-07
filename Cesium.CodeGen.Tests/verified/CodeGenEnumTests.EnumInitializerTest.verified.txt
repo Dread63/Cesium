@@ -1,12 +1,12 @@
 Module: Primary
   Type: <Module>
 
-  Type: Colors
+  Type: _Enum_Colors
   Fields:
-    System.Int32 Colors::value__
-    Colors Colors::Red
+    System.Int32 _Enum_Colors::value__
+    _Enum_Colors _Enum_Colors::Red
     Constant: 0
-    Colors Colors::Green
+    _Enum_Colors _Enum_Colors::Green
     Constant: 5
-    Colors Colors::Blue
+    _Enum_Colors _Enum_Colors::Blue
     Constant: 6

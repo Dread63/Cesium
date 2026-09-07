@@ -10,10 +10,10 @@ Module: Primary
       IL_0007: stsfld System.Byte* <Module>::a
       IL_000c: ret
 
-  Type: ValueSize
+  Type: _Enum_ValueSize
   Fields:
-    System.Int32 ValueSize::value__
-    ValueSize ValueSize::Zero
+    System.Int32 _Enum_ValueSize::value__
+    _Enum_ValueSize _Enum_ValueSize::Zero
     Constant: 0
-    ValueSize ValueSize::One
+    _Enum_ValueSize _Enum_ValueSize::One
     Constant: 1
