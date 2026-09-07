@@ -39,7 +39,7 @@ internal sealed class EnumType : IGeneratedType, IEquatable<EnumType>, IEquatabl
     {
         var enumType = new TypeDefinition(
             context.AssemblyContext.CompilationOptions.Namespace,
-            Identifier is null ? "<typedef>" + name : Identifier,
+            Identifier is null ? "<typedef>" + name : "_Enum_" + Identifier,
             TypeAttributes.Public | TypeAttributes.Sealed,
             context.Module.ImportReference(new TypeReference("System", "Enum", context.AssemblyContext.MscorlibAssembly.MainModule, context.AssemblyContext.MscorlibAssembly.MainModule.TypeSystem.CoreLibrary)));
 
