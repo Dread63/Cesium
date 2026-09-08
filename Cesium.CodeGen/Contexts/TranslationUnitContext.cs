@@ -241,6 +241,40 @@ public class TranslationUnitContext
             return new StructType(ResolveStructMembers(structType), structType.IsUnion, structType.Identifier);
         }
 
+        if (type is EnumType enumType)
+        {
+
+            if (enumType.Members.Count == 0 && enumType.Identifier is not null)
+            {
+                if (_tags.TryGetValue(enumType.Identifier, out var existingType))
+                {
+                    return existingType;
+                }
+            }
+
+            if (enumType.Members.Count != 0 && enumType.Identifier is not null)
+            {
+                IType? existingType;
+                if (_types.TryGetValue(enumType.Identifier, out existingType))
+                {
+                    if (existingType is EnumType existingEnumType && existingEnumType.Members.Count == 0)
+                    {
+
+                        return existingType;
+                    }
+                }
+
+                if (_tags.TryGetValue(enumType.Identifier, out existingType))
+                {
+                    if (existingType is EnumType existingEnumType && existingEnumType.Members.Count == 0)
+                    {
+                        existingEnumType.Members = enumType.Members;
+                        return existingType;
+                    }
+                }
+            }
+        }
+
         if (type is FunctionType functionType)
         {
             ParametersInfo? parametersInfo = null;
