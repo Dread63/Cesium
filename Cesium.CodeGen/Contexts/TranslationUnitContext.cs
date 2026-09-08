@@ -259,7 +259,7 @@ public class TranslationUnitContext
                 {
                     if (existingType is EnumType existingEnumType && existingEnumType.Members.Count == 0)
                     {
-
+                        existingEnumType.Members = enumType.Members;
                         return existingType;
                     }
                 }
@@ -273,6 +273,8 @@ public class TranslationUnitContext
                     }
                 }
             }
+
+            return enumType;
         }
 
         if (type is FunctionType functionType)

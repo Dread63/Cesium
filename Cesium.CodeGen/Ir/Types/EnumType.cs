@@ -22,7 +22,7 @@ internal sealed class EnumType : IGeneratedType, IEquatable<EnumType>, IEquatabl
     /// <inheritdoc />
     public TypeKind TypeKind => TypeKind.Enum;
 
-    internal IReadOnlyList<InitializableDeclarationInfo> Members { get; }
+    internal IReadOnlyList<InitializableDeclarationInfo> Members { get; set; }
     public string? Identifier { get; }
 
     public TypeReference Resolve(TranslationUnitContext context)
