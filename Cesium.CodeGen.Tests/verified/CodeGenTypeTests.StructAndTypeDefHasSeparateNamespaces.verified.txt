@@ -27,9 +27,9 @@ Module: Primary
   Type: tagFoo
   Layout: Sequential
   Fields:
-    System.Int32 tagFoo::A
+    - System.Int32 tagFoo::A
 
   Type: <typedef>Foo
   Layout: Sequential
   Fields:
-    System.Int32 <typedef>Foo::B
+    - System.Int32 <typedef>Foo::B

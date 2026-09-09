@@ -37,7 +37,7 @@ Module: Primary
     Pack: 1
     Size: 8
   Fields:
-    <ConstantPool>/<ConstantPoolItemType7> <ConstantPool>::ConstDataBuffer0
+    - <ConstantPool>/<ConstantPoolItemType7> <ConstantPool>::ConstDataBuffer0
       Init with (UTF-8 x 7 bytes): "hellow"
-    <ConstantPool>/<ConstantPoolItemType8> <ConstantPool>::ConstDataBuffer1
+    - <ConstantPool>/<ConstantPoolItemType8> <ConstantPool>::ConstDataBuffer1
       Init with (UTF-8 x 8 bytes): "hellow1"

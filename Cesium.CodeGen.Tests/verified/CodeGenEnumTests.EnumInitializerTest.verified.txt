@@ -3,10 +3,10 @@ Module: Primary
 
   Type: _Enum_Colors
   Fields:
-    System.Int32 _Enum_Colors::value__
-    _Enum_Colors _Enum_Colors::Red
-    Constant: 0
-    _Enum_Colors _Enum_Colors::Green
-    Constant: 5
-    _Enum_Colors _Enum_Colors::Blue
-    Constant: 6
+    - System.Int32 _Enum_Colors::value__
+    - _Enum_Colors _Enum_Colors::Red
+      Constant: 0
+    - _Enum_Colors _Enum_Colors::Green
+      Constant: 5
+    - _Enum_Colors _Enum_Colors::Blue
+      Constant: 6

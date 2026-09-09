@@ -26,5 +26,5 @@ Module: Primary
   Type: <typedef>foo
   Layout: Sequential
   Fields:
-    System.Byte* <typedef>foo::ptr
-    System.Int32 <typedef>foo::len
+    - System.Byte* <typedef>foo::ptr
+    - System.Int32 <typedef>foo::len

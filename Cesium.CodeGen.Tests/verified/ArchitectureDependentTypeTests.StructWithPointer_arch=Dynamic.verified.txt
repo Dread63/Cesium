@@ -4,4 +4,4 @@ Module: Primary
   Type: <typedef>foo
   Layout: Sequential
   Fields:
-    System.Byte* <typedef>foo::x
+    - System.Byte* <typedef>foo::x

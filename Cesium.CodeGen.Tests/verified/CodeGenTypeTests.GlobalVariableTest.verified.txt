@@ -13,7 +13,7 @@ Module: Primary
 
   Type: TestClass
   Fields:
-    System.Int32 TestClass::x
+    - System.Int32 TestClass::x
   Methods:
     System.Void TestClass::.cctor()
       IL_0000: ldc.i4.s 50

@@ -1,8 +1,8 @@
 Module: Primary
   Type: <Module>
   Fields:
-    Node* <Module>::root
-    Node <Module>::__global_tmp_0
+    - Node* <Module>::root
+    - Node <Module>::__global_tmp_0
   Methods:
     System.Void <Module>::.cctor()
       Locals:
@@ -21,4 +21,4 @@ Module: Primary
   Type: Node
   Layout: Sequential
   Fields:
-    Node* Node::parent
+    - Node* Node::parent

@@ -1,7 +1,7 @@
 Module: Primary
   Type: <Module>
   Fields:
-    System.Int32 <Module>::test
+    - System.Int32 <Module>::test
   Methods:
     System.Int32 <Module>::main()
       IL_0000: ldsfld System.Int32 <Module>::test

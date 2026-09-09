@@ -6,5 +6,5 @@ Module: Primary
   Pack: 4
   Size: 0
   Fields:
-    Offset: 0
-    System.Byte* <typedef>foo::x
+    - System.Byte* <typedef>foo::x
+      Offset: 0

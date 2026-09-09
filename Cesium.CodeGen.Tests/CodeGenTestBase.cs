@@ -213,18 +213,17 @@ public abstract class CodeGenTestBase : VerifyTestBase
                 result.AppendLine($"{Indent(indent)}Fields:");
                 foreach (var field in type.Fields)
                 {
+                    result.AppendLine($"{Indent(indent + 1)}- {field}");
                     if (field.Offset != -1)
                     {
-                        result.AppendLine($"{Indent(indent + 1)}Offset: {field.Offset}");
+                        result.AppendLine($"{Indent(indent + 2)}Offset: {field.Offset}");
                     }
 
-                    result.AppendLine($"{Indent(indent + 1)}{field}");
-
                     if (field.HasConstant)
-                        result.AppendLine($"{Indent(indent + 1)}Constant: {field.Constant}");
+                        result.AppendLine($"{Indent(indent + 2)}Constant: {field.Constant}");
 
                     if (field.HasCustomAttributes)
-                        PrintCustomAttributes(indent + 1, field.CustomAttributes);
+                        PrintCustomAttributes(indent + 2, field.CustomAttributes);
 
                     var initialValue = field.InitialValue;
                     if (initialValue.Length > 0)

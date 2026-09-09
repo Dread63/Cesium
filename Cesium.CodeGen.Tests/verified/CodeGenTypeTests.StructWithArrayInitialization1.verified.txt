@@ -72,10 +72,10 @@ Module: Primary
     - UnsafeValueTypeAttribute()
 
     Fields:
-      System.Int32 Foo/<SyntheticBuffer>b::FixedElementField
+      - System.Int32 Foo/<SyntheticBuffer>b::FixedElementField
   Fields:
-    System.Int32 Foo::a
-    Foo/<SyntheticBuffer>b Foo::b
-    Custom attributes:
-    - FixedBufferAttribute(System.Int32, 8)
+    - System.Int32 Foo::a
+    - Foo/<SyntheticBuffer>b Foo::b
+      Custom attributes:
+      - FixedBufferAttribute(System.Int32, 8)
 

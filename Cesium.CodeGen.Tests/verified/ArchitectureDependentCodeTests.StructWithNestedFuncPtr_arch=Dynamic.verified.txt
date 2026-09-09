@@ -4,4 +4,4 @@ Module: Primary
   Type: <typedef>foo
   Layout: Sequential
   Fields:
-    method System.Int32 *(method System.Int32 *()) <typedef>foo::foo
+    - method System.Int32 *(method System.Int32 *()) <typedef>foo::foo

@@ -37,4 +37,4 @@ Module: Primary
   Type: CesiumLib.Greeting
   Layout: Sequential
   Fields:
-    System.Byte* CesiumLib.Greeting::message
+    - System.Byte* CesiumLib.Greeting::message

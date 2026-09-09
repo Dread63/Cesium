@@ -17,4 +17,4 @@ Module: Primary
 
   Type: testInput<Statics>
   Fields:
-    System.Int32 testInput<Statics>::test
+    - System.Int32 testInput<Statics>::test

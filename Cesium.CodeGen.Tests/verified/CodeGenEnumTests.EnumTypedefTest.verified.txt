@@ -3,8 +3,8 @@ Module: Primary
 
   Type: _Enum_Side
   Fields:
-    System.Int32 _Enum_Side::value__
-    _Enum_Side _Enum_Side::Side_L
-    Constant: 0
-    _Enum_Side _Enum_Side::Side_R
-    Constant: 1
+    - System.Int32 _Enum_Side::value__
+    - _Enum_Side _Enum_Side::Side_L
+      Constant: 0
+    - _Enum_Side _Enum_Side::Side_R
+      Constant: 1

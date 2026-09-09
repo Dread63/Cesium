@@ -15,10 +15,10 @@ Module: Primary
     - UnsafeValueTypeAttribute()
 
     Fields:
-      System.Byte* <typedef>foo/<SyntheticBuffer>x::FixedElementField
+      - System.Byte* <typedef>foo/<SyntheticBuffer>x::FixedElementField
   Fields:
-    Offset: 0
-    <typedef>foo/<SyntheticBuffer>x <typedef>foo::x
-    Custom attributes:
-    - FixedBufferAttribute(System.Byte*, 8)
+    - <typedef>foo/<SyntheticBuffer>x <typedef>foo::x
+      Offset: 0
+      Custom attributes:
+      - FixedBufferAttribute(System.Byte*, 8)
 

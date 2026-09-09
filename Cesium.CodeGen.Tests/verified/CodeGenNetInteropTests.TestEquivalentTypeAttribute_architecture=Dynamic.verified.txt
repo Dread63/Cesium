@@ -26,5 +26,5 @@ Module: Primary
     Pack: 1
     Size: 3
   Fields:
-    <ConstantPool>/<ConstantPoolItemType3> <ConstantPool>::ConstDataBuffer0
+    - <ConstantPool>/<ConstantPoolItemType3> <ConstantPool>::ConstDataBuffer0
       Init with (UTF-8 x 3 bytes): "Hi"

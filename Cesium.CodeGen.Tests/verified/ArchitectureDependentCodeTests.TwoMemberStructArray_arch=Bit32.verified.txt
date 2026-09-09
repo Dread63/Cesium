@@ -26,7 +26,7 @@ Module: Primary
   Pack: 4
   Size: 0
   Fields:
-    Offset: 0
-    System.Byte* <typedef>foo::ptr
-    Offset: 4
-    System.Int32 <typedef>foo::len
+    - System.Byte* <typedef>foo::ptr
+      Offset: 0
+    - System.Int32 <typedef>foo::len
+      Offset: 4

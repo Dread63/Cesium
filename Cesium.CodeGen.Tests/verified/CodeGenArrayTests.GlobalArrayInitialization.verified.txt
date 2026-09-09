@@ -1,7 +1,7 @@
 Module: Primary
   Type: <Module>
   Fields:
-    System.Int32* <Module>::a
+    - System.Int32* <Module>::a
   Methods:
     System.Void <Module>::.cctor()
       IL_0000: ldc.i4.s 16
@@ -50,5 +50,5 @@ Module: Primary
     Pack: 1
     Size: 16
   Fields:
-    <ConstantPool>/<ConstantPoolItemType16> <ConstantPool>::ConstDataBuffer0
+    - <ConstantPool>/<ConstantPoolItemType16> <ConstantPool>::ConstDataBuffer0
       Init with (UTF-8 x 16 bytes): "\1\0\0\0\2\0\0\0\3\0\0\0\4\0\0"

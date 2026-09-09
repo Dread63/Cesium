@@ -1,7 +1,7 @@
 Module: Primary
   Type: <Module>
   Fields:
-    System.Byte* <Module>::a
+    - System.Byte* <Module>::a
   Methods:
     System.Void <Module>::.cctor()
       IL_0000: ldc.i4.1
@@ -12,8 +12,8 @@ Module: Primary
 
   Type: _Enum_ValueSize
   Fields:
-    System.Int32 _Enum_ValueSize::value__
-    _Enum_ValueSize _Enum_ValueSize::Zero
-    Constant: 0
-    _Enum_ValueSize _Enum_ValueSize::One
-    Constant: 1
+    - System.Int32 _Enum_ValueSize::value__
+    - _Enum_ValueSize _Enum_ValueSize::Zero
+      Constant: 0
+    - _Enum_ValueSize _Enum_ValueSize::One
+      Constant: 1

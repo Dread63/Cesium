@@ -6,5 +6,5 @@ Module: Primary
   Pack: 4
   Size: 0
   Fields:
-    Offset: 0
-    method System.Int32 *(method System.Int32 *()) <typedef>foo::foo
+    - method System.Int32 *(method System.Int32 *()) <typedef>foo::foo
+      Offset: 0

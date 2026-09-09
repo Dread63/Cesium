@@ -4,4 +4,4 @@ Module: Primary
   Type: foo
   Layout: Sequential
   Fields:
-    System.Int32 foo::x
+    - System.Int32 foo::x

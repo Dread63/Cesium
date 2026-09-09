@@ -4,4 +4,4 @@ Module: Primary
   Type: Foo
   Layout: Sequential
   Fields:
-    method System.Void *(System.Int32) Foo::x
+    - method System.Void *(System.Int32) Foo::x

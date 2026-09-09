@@ -4,4 +4,4 @@ Module: Primary
   Type: Token
   Layout: Sequential
   Fields:
-    Token* Token::x
+    - Token* Token::x

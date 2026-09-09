@@ -39,5 +39,5 @@ Module: Primary
   Type: Foo
   Layout: Sequential
   Fields:
-    System.Int32 Foo::a
-    System.Int32 Foo::b
+    - System.Int32 Foo::a
+    - System.Int32 Foo::b

@@ -41,5 +41,5 @@ Module: Primary
     Pack: 1
     Size: 8
   Fields:
-    <ConstantPool>/<ConstantPoolItemType8> <ConstantPool>::ConstDataBuffer0
+    - <ConstantPool>/<ConstantPoolItemType8> <ConstantPool>::ConstDataBuffer0
       Init with (UTF-8 x 8 bytes): "\0\0\0\0\0\0\0"

@@ -4,4 +4,4 @@ Module: Primary
   Type: Token
   Layout: Sequential
   Fields:
-    System.Int32 Token::x
+    - System.Int32 Token::x
